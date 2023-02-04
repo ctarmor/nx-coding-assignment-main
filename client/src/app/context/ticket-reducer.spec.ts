@@ -18,9 +18,8 @@ describe('ticketReducer', () => {
 
   it.each([
     [{ type: 'SET_TICKETS', tickets: [mockTicket] }, { tickets: [mockTicket] }, ],
-    [{ type: 'SET_TICKETS', tickets: [mockTicket] }, { tickets: [mockTicket] }, ],
-    [{ type: 'SET_USERS', users: [mockUser] }, { users: [mockUser] }, ],
-    [{ type: 'SET_USER', selectedUser: mockUser }, { selectedUser: mockUser }, ]
+    [{ type: 'SET_TICKET', selectedTicket: mockTicket }, { selectedTicket: mockTicket }, ],
+    [{ type: 'SET_USERS', users: [mockUser] }, { users: [mockUser] }, ]
   ])
   ('should update SET_TICKETS', (action, expected) => {
     const target = ticketReducer(initialState, action as TicketAction);

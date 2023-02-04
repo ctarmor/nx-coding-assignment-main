@@ -8,7 +8,7 @@ import { UserSelector } from './UserSelector';
 
 const TicketDetails = () => {
   const ticketDispatcher = useTicketDispatch();
-  const { selectedTicket, selectedUser } = useTicketState();
+  const { selectedTicket, users } = useTicketState();
   const { id } = useParams();
 
   useEffect(() => {
@@ -16,15 +16,15 @@ const TicketDetails = () => {
   }, [id, ticketDispatcher]);
 
   // Easier to read thank in JSX below
-  const displayUserSelector = selectedTicket && !selectedTicket.completed;
+  // const displayUserSelector = selectedTicket && !selectedTicket.assigneeId;
 
   return (
     <div className={styles['container']}>
       <h1>Ticket:</h1>
       {!selectedTicket && <span>Loading ticket ...</span>}
       {selectedTicket && <SelectedTicket ticket={selectedTicket} />}
-      {displayUserSelector && <UserSelector ticket={selectedTicket} />}
-      {selectedUser && <div><br/>Completed by {selectedUser.name}</div>}
+      {selectedTicket?.assigneeId && <div><br/>Assigned to {users.find(u => u.id === selectedTicket.assigneeId)?.name}</div>}
+      {selectedTicket &&  <UserSelector ticket={selectedTicket} />}
       <div></div>
     </div>
   );

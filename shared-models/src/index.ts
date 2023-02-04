@@ -13,6 +13,5 @@ export type Ticket = {
 export type TicketState = {
   tickets: Ticket[],
   users: User[],
-  selectedUser?: User,
   selectedTicket?: Ticket
 }

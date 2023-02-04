@@ -12,16 +12,15 @@ export const UserSelector = ({ ticket }: UserSelectorProps) => {
 
   const onClick = (e: { preventDefault: () => void }, user: User): void => {
     e.preventDefault();
-    ticketDispatcher({ type: 'SET_USER', selectedUser: user });
     ticketDispatcher({
       type: 'SET_TICKET',
-      selectedTicket: { ...ticket, completed: true },
+      selectedTicket: { ...ticket, assigneeId: user.id, completed: true },
     });
   };
 
   return (
     <div>
-      <h3>Assign Ticket to:</h3>
+      <h3>Re-assign to:</h3>
       <ul>
         {users.map((u) => (
           <li key={u.id}>

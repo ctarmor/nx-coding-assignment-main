@@ -8,13 +8,12 @@ import { User, Ticket, TicketState } from '@acme/shared-models';
 //
 
 type SetUsers = { type: 'SET_USERS'; users: User[] };
-type SetUser = { type: 'SET_USER'; selectedUser: User };
 type SetTickets = { type: 'SET_TICKETS'; tickets: Ticket[] };
 type SetTicket = { type: 'SET_TICKET'; selectedTicket: Ticket };
-export type TicketAction = SetUsers | SetTickets | SetTicket | SetUser;
+export type TicketAction = SetUsers | SetTickets | SetTicket;
 
 export const ticketReducer = (curState: TicketState, action: TicketAction) => {
-  console.log('>>> ticketReducer:', action.type, action);
+  // console.log('>>> ticketReducer:', action.type, action);
   switch (action.type) {
     case 'SET_TICKETS':
       return {
@@ -30,11 +29,6 @@ export const ticketReducer = (curState: TicketState, action: TicketAction) => {
       return {
         ...curState,
         users: action.users,
-      };
-    case 'SET_USER':
-      return {
-        ...curState,
-        selectedUser: action.selectedUser,
       };
     default:
       throw new Error(`Invalid actionn type`);
