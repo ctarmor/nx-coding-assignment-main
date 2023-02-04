@@ -1,7 +1,7 @@
 import { useTicketState } from '../context/tickets-context';
 import styles from './tickets.module.css';
 
-export const Tickets = () => {
+const Tickets = () => {
   const { tickets } = useTicketState();
 
   return (
@@ -21,3 +21,5 @@ export const Tickets = () => {
     </div>
   );
 };
+
+export default Tickets;

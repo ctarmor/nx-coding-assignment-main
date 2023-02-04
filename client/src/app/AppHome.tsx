@@ -4,7 +4,7 @@ import styles from './app.module.css';
 import TicketDetails from './ticket-details/ticket-details';
 import { fetchTickets, fetchUsers } from './api/apis';
 import { useTicketDispatch } from './context/tickets-context';
-import { Tickets } from './tickets/tickets';
+import Tickets from './tickets/tickets';
 
 export const AppHome = () => {
   const ticketDispatcher = useTicketDispatch();
