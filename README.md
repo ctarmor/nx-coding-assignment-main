@@ -8,7 +8,7 @@ So I did the following:
 - a poor mans editor to re-assign the user.
 - Apis now use state via reducers. 
 
-I hope it's up to standards and we can chat abou it.  
+I hope it's up to standards and we can chat about it.  
 
 # Coding assignment
 
