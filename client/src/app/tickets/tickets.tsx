@@ -13,7 +13,7 @@ export function Tickets(props: TicketsProps) {
         <ul>
           {props.tickets.map((t) => (
             <li key={t.id}>
-              Ticket: {t.id}, {t.description}
+              <a href={`/${t.id}`}>{`Ticket: ${t.id}, ${t.description}`}</a>
             </li>
           ))}
         </ul>
