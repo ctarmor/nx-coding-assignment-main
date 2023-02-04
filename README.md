@@ -5,7 +5,7 @@ There is so much you want to do in 2-3 hours. As usual we want to make it clean.
 So I did the following:
 
 - cleanup a bit to use context and reducers. It follow popular Kent C. Dodds pattern.  
-- I show a poor mans editor to re-assigned the user.
+- a poor mans editor to re-assign the user.
 - Apis now use state via reducers. 
 
 I hope it's up to standards and we can chat abou it.  
