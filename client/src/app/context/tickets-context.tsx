@@ -7,18 +7,19 @@ import { TicketAction, ticketReducer } from './ticket-reducer';
 //
 export type TicketDispatch = (action: TicketAction) => void;
 
-const TicketStateContext = React.createContext<TicketState | undefined>(undefined);
+export const initialState : TicketState = {
+  tickets: [],
+  users: []
+};
+
+
+const TicketStateContext = React.createContext<TicketState>(initialState);
 const TicketDispatchContext = React.createContext<TicketDispatch | undefined>(undefined);
 
 type TicketProviderProps = {
   children: React.ReactNode
 }
 
-
-export const initialState : TicketState = {
-  tickets: [],
-  users: []
-};
 
 export const TicketProvider = ({ children }: TicketProviderProps): JSX.Element => {
   const [state, dispatch] = React.useReducer(ticketReducer, initialState);
