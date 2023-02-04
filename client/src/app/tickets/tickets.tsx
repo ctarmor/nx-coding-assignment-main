@@ -7,7 +7,7 @@ export const Tickets = () => {
   return (
     <div className={styles['tickets']}>
       <h2>Tickets</h2>
-      {tickets ? (
+      {tickets && tickets.length > 0 ? (
         <ul>
           {tickets.map((t) => (
             <li key={t.id}>
@@ -16,7 +16,7 @@ export const Tickets = () => {
           ))}
         </ul>
       ) : (
-        <span>...</span>
+        <span>Loading tickets ...</span>
       )}
     </div>
   );

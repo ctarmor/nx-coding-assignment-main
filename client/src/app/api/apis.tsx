@@ -1,5 +1,4 @@
 import { TicketDispatch } from '../context/tickets-context';
-
 //
 // Centralized api calls
 //
