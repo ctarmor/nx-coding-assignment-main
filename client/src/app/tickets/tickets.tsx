@@ -1,17 +1,15 @@
-import { Ticket } from '@acme/shared-models';
+import { useTicketState } from '../context/tickets-context';
 import styles from './tickets.module.css';
 
-export interface TicketsProps {
-  tickets: Ticket[];
-}
+export const Tickets = () => {
+  const { tickets } = useTicketState();
 
-export function Tickets(props: TicketsProps) {
   return (
     <div className={styles['tickets']}>
       <h2>Tickets</h2>
-      {props.tickets ? (
+      {tickets ? (
         <ul>
-          {props.tickets.map((t) => (
+          {tickets.map((t) => (
             <li key={t.id}>
               <a href={`/${t.id}`}>{`Ticket: ${t.id}, ${t.description}`}</a>
             </li>
@@ -22,6 +20,4 @@ export function Tickets(props: TicketsProps) {
       )}
     </div>
   );
-}
-
-export default Tickets;
+};

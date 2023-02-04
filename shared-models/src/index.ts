@@ -9,3 +9,10 @@ export type Ticket = {
   assigneeId: null | number;
   completed: boolean;
 };
+
+export type TicketState = {
+  tickets: Ticket[],
+  users: User[],
+  selectedUser?: User,
+  selectedTicket?: Ticket
+}
