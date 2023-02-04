@@ -15,8 +15,7 @@ const TicketDetails = () => {
     fetchTicket(id || '', ticketDispatcher);
   }, [id, ticketDispatcher]);
 
-  // Easier to read thank in JSX below
-  // const displayUserSelector = selectedTicket && !selectedTicket.assigneeId;
+  // Higher compnent to handle editing functioanlity.  Esier to read.
 
   return (
     <div className={styles['container']}>

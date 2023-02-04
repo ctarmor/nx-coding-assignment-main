@@ -3,7 +3,7 @@ import { User, Ticket, TicketState } from '@acme/shared-models';
 // ticket reducers
 //
 //
-// Following Dodds pattern:
+// Following popular Dodds pattern:
 // https://kentcdodds.com/blog/application-state-management-with-react
 //
 
